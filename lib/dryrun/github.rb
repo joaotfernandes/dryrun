@@ -79,7 +79,7 @@ module Dryrun
           DryrunUtils.execute('git reset --hard HEAD')
           DryrunUtils.execute('git fetch --all')
           DryrunUtils.execute("git checkout #{branch}")
-          DryrunUtils.execute("git pull origin #{branch}")
+          DryrunUtils.execute("git reset --hard origin/#{branch}")
         end
       else
         DryrunUtils.execute("git clone --depth 1 #{cloneable} #{tmpdir}")
